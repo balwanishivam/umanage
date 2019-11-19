@@ -1,0 +1,47 @@
+{% extends 'cart/base.html' %}
+
+{% block content %}
+
+    <div class="buttion_place">
+        <a href="{% url 'cart:addnew' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> + New Bill</a>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th> ID</th>
+            <th> Name</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Date Of Purchase </th>
+            <th>Total Items </th>
+            <th>Total Amount </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for bill in bills %}
+
+            <tr>
+                <th>
+                    <a href="{% url 'cart:details' bill.pk %}">
+                        {{ bill.pk }}
+                    </a>
+                </th>
+                
+                <td>{{ bill.name }}</td>
+                <td>{{ bill.contact }}</td>
+                <td>{{ bill.address }}</td>
+                <td>{{ bill.email }}</td>
+                <td>{{ bill.date_purchase }}</td>
+                <td>{{ bill.total_items }}</td>
+                <td>{{ bill.total_amt }}</td>
+                
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}
+

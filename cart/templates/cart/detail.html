@@ -1,0 +1,17 @@
+{% extends 'cart/base.html' %}
+{% block content %}
+
+
+    <h1>Bill Information</h1>
+
+        
+        <label><h5>Bill ID</h5></label>:  {{ bill.pk }} <br>
+       <label><h5>Name</h5></label>:  {{ bill.name }} <br>
+       <label><h5>Contact</h5></label>: {{ bill.contact }}<br>
+       <label><h5>Address</h5></label>: {{ bill.address }}<br>
+       <label><h5>Email</h5></label>: {{ bill.email }}<br>
+       <label><h5>Date of Purchase</h5></label>: {{ bill.date_purchase }}<br>
+       <label><h5>Total Item</h5></label>: {{ bill.total_item }}<br>
+       <label><h5>Total Amount</h5></label>: {{ bill.total_amt }}<br>
+
+{% endblock %}

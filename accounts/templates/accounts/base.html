@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+<head>
+    <meta charset ="utf-8">
+	<title> Login And Registration Form </title>
+   <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/style.css' %}"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+ 
+
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <ul class="nav navbar-nav">
+{# Django Home Link / Admin Link / Register Link#}
+          <li><a class="navbar-brand" href="{% url 'accounts:home' %}">BIZMAN</a></li>
+          <li><a class="navbar-link" href="{% url 'accounts:user_login' %}">LOGIN</a></li>
+          <li><a class="navbar-link" href="{% url 'accounts:register' %}">REGISTER</a></li>     
+          {# Some logic on what to display for last item#}
+         
+</ul>
+      </div>
+    </nav>
+    <div class="container">
+    {% block body_block%}
+    {% endblock %}
+    </div>
+  </body>
+</html>
